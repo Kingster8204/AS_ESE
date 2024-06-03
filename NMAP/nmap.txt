@@ -1,0 +1,160 @@
+┌──(root㉿kali)-[~]
+└─# nmap www.google.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:42 EDT
+Nmap scan report for www.google.com (142.250.183.228)
+Host is up (0.017s latency).
+Other addresses for www.google.com (not scanned): 2404:6800:4007:81e::2004
+rDNS record for 142.250.183.228: maa05s23-in-f4.1e100.net
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 15.39 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# sudo nmap -sA www.google.com                                   
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:43 EDT
+Nmap scan report for www.google.com (142.250.183.228)
+Host is up (0.00075s latency).
+Other addresses for www.google.com (not scanned): 2404:6800:4002:821::2004
+rDNS record for 142.250.183.228: maa05s23-in-f4.1e100.net
+All 1000 scanned ports on www.google.com (142.250.183.228) are in ignored states.
+Not shown: 1000 unfiltered tcp ports (reset)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.35 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# nmap 142.250.183.228 - 232
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:46 EDT
+Failed to resolve "-".
+Bare '-': did you put a space between '--'?
+Nmap scan report for maa05s23-in-f4.1e100.net (142.250.183.228)
+Host is up (0.0072s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for 232 (0.0.0.232)
+Host is up (0.0038s latency).
+All 1000 scanned ports on 232 (0.0.0.232) are in ignored states.
+Not shown: 1000 filtered tcp ports (net-unreach)
+
+Nmap done: 2 IP addresses (2 hosts up) scanned in 5.89 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# nmap 142.250.183.228-232  
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:47 EDT
+Stats: 0:01:14 elapsed; 0 hosts completed (5 up), 5 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 82.25% done; ETC: 21:48 (0:00:16 remaining)
+Nmap scan report for maa05s23-in-f4.1e100.net (142.250.183.228)
+Host is up (0.042s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for maa05s23-in-f5.1e100.net (142.250.183.229)
+Host is up (0.12s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for maa05s23-in-f6.1e100.net (142.250.183.230)
+Host is up (0.072s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for maa05s23-in-f7.1e100.net (142.250.183.231)
+Host is up (0.051s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap scan report for maa05s23-in-f8.1e100.net (142.250.183.232)
+Host is up (0.038s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 5 IP addresses (5 hosts up) scanned in 94.15 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# sudo nmap -sS 142.250.183.228    
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:50 EDT
+Nmap scan report for maa05s23-in-f4.1e100.net (142.250.183.228)
+Host is up (0.0052s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 4.57 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# sudo nmap -sS www.google.com -oG op.text
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:51 EDT
+Nmap scan report for www.google.com (142.250.183.228)
+Host is up (0.0089s latency).
+Other addresses for www.google.com (not scanned): 2404:6800:4002:821::2004
+rDNS record for 142.250.183.228: maa05s23-in-f4.1e100.net
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 5.51 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# ls
+op.text
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# op.txt
+op.txt: command not found
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# nmap -p 3000-3005 www.google.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:55 EDT
+Nmap scan report for www.google.com (142.250.194.100)
+Host is up (0.00038s latency).
+Other addresses for www.google.com (not scanned): 2404:6800:4002:821::2004
+rDNS record for 142.250.194.100: del12s04-in-f4.1e100.net
+
+PORT     STATE    SERVICE
+3000/tcp filtered ppp
+3001/tcp filtered nessus
+3002/tcp filtered exlm-agent
+3003/tcp filtered cgms
+3004/tcp filtered csoftragent
+3005/tcp filtered deslogin
+
+Nmap done: 1 IP address (1 host up) scanned in 1.44 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# sudo nmap --trace www.google.com        
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-02 21:56 EDT
+Nmap scan report for www.google.com (142.250.194.100)
+Host is up (0.0069s latency).
+Other addresses for www.google.com (not scanned): 2404:6800:4002:821::2004
+rDNS record for 142.250.194.100: del12s04-in-f4.1e100.net
+Not shown: 998 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   2.53 ms 10.0.2.2
+2   2.53 ms del12s04-in-f4.1e100.net (142.250.194.100)
+
+Nmap done: 1 IP address (1 host up) scanned in 15.34 seconds
+                                                                                                                                                                                                                                           
+┌──(root㉿kali)-[~]
+└─# nmap 142.250.183.*   
